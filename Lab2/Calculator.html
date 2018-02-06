@@ -2,19 +2,25 @@
     <head>
         <script>
         function calculate() {
+            var y = document.getElementById('y').value;
             var x = document.getElementById('x').value;
-            // use x in a calculation
-            // then use document.getElementById('outputn').innerHTML = to output value
+            var w = y / x;
+            var v = (x/100) * 2;
+            var u = Math.pow(y,2) * (3 - x);
+            document.getElementById('output1').innerHTML = u;
+            document.getElementById('output2').innerHTML = v;
+            document.getElementById('output3').innerHTML = w;
         }
+        
         </script>
     </head>
     <body>
         x = <input type="text" id="x"><br>
         y = <input type="text" id="y"><br><br>
-        <input type="button" value="Calculate" onclick="calculate()">
+       <button onclick= "calculate()">Calculate</button>
         <br><br>
-        (y2) * (3 -x) =  <br>
-        x % 2 =  <br>
+        (y2) * (3 -x) = <span id="output1"> </span><br>
+        x % 2 = <span id="output2"> </span><br>
         y / x = <span id="output3"> </span>
         
     </body>
