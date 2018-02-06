@@ -1,0 +1,24 @@
+<html>
+<body>
+
+
+<button onclick="Today()">Display Date</button>
+
+<p id="Date"></p>
+<p id="Dates"></p>
+<p id="Dated"></p>
+
+<script>
+function Today() {
+    var n =  new Date();
+    var y = n.getFullYear();
+    var m = n.getMonth();
+    var d = n.getDate();
+    document.getElementById("Date").innerHTML = Date();
+    document.getElementById("Dates").innerHTML = d +"/"+m+"/"+y;
+    document.getElementById("Dated").innerHTML = y+"-"+m+"-"+d;
+}
+</script>
+
+</body>
+</html>
