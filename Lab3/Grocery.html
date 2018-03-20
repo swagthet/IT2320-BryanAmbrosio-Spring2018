@@ -3,27 +3,27 @@
 <style>
     body 
     { 
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+        Font-Family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
     }
 </style>
 <script>
-    var totalAmount = 0;
-    var items = "<table border='1' cellpadding='4' cellspacing='0'>" +
+    var TotalAmount = 0;
+    var Items = "<Table Border='1' Cellpadding='4' Cellspacing='0'>" +
         "<tr><td>Item</td><td>Item Cost</td></tr>";
     function addItem() 
     {
-        var newAmount = document.getElementById('newAmount').value;
-    
-        var itemDescription = document.getElementById('newItem').value;
-        items = items.replace("</table>", "");
-        items += "<tr><td>item</td><td>$" + parseFloat(newAmount).toFixed(2) + "</td></tr>"
-        items += "</table>";
+        var NewAmount = Document.getElementById('NewAmount').value;
+        var ItemDescription = Document.getElementById('NewItem').value;
+
+        Items = Items.replace("</table>", "");
+        Items += "<tr><td>item</td><td>$" + parseFloat(NewAmount).toFixed(2) + "</td></tr>"
+        Items += "</table>";
         
-        document.getElementById('listOfItems').innerHTML = items;
-        var taxAmount = 0;
-        document.getElementById('newItem').value = "";
-        document.getElementById('newAmount').value = "";
-        document.getElementById('newItem').focus();
+        Document.getElementById('listOfItems').innerHTML = Items;
+        var TaxAmount = 0;
+        Document.getElementById('NewItem').value = "";
+        Document.getElementById('NewAmount').value = "";
+        Document.getElementById('NewItem').focus();
     }
 </script>
 </head>
@@ -31,20 +31,20 @@
 <h1>Grocery List</h1>
 <p>
 <h2>Add Item</h2> 
-Description: <br><input type="text" id="newItem"><br>
-Amount: <br><input type="text" id="newAmount"> 
-<input type="button" onclick="addItem()" value="Add Item">
+Description <br><input type="text" id="NewItem"><br>
+Cost <br><input type="text" id="NewAmount"> 
+<input type="button" onclick="Add()" value="Add">
 </p>
-<h2>Grocery Cart</h2>
-<span id="listOfItems">&nbsp;</span>
+<h2>Grocery</h2>
+<span id="ListOfItems">&nbsp;</span>
 <p>
 <h2>Total</h2>
-Total: $<span id="totalAmountBeforeTax"></span><br>
-Tax: $<span id="totalTax"></span><br>
-Total with Tax: $<span id="totalAfterTax"></span>
+Total $<span id="TotalAmountBeforeTax"></span><br>
+Tax $<span id="TotalTax"></span><br>
+Total with Tax $<span id="TotalAfterTax"></span>
 </p>
 <script>
-    document.getElementById('newItem').focus();
+    Document.getElementById('NewItem').focus();
 </script>
 </body>
 </html>
