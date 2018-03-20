@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+    body 
+    { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+    }
+</style>
+<script>
+    var totalAmount = 0;
+    var items = "<table border='1' cellpadding='4' cellspacing='0'>" +
+        "<tr><td>Item</td><td>Item Cost</td></tr>";
+    function addItem() 
+    {
+        var newAmount = document.getElementById('newAmount').value;
+    
+        var itemDescription = document.getElementById('newItem').value;
+        items = items.replace("</table>", "");
+        items += "<tr><td>item</td><td>$" + parseFloat(newAmount).toFixed(2) + "</td></tr>"
+        items += "</table>";
+        
+        document.getElementById('listOfItems').innerHTML = items;
+        var taxAmount = 0;
+        document.getElementById('newItem').value = "";
+        document.getElementById('newAmount').value = "";
+        document.getElementById('newItem').focus();
+    }
+</script>
+</head>
+<body>
+<h1>Grocery List</h1>
+<p>
+<h2>Add Item</h2> 
+Description: <br><input type="text" id="newItem"><br>
+Amount: <br><input type="text" id="newAmount"> 
+<input type="button" onclick="addItem()" value="Add Item">
+</p>
+<h2>Grocery Cart</h2>
+<span id="listOfItems">&nbsp;</span>
+<p>
+<h2>Total</h2>
+Total: $<span id="totalAmountBeforeTax"></span><br>
+Tax: $<span id="totalTax"></span><br>
+Total with Tax: $<span id="totalAfterTax"></span>
+</p>
+<script>
+    document.getElementById('newItem').focus();
+</script>
+</body>
+</html>
