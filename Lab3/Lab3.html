@@ -4,8 +4,7 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif }
 </style>
 <script>
-    // Video Demonstration - https://youtu.be/9CH7_BiI_1A
-    var totalAmount = 0;
+    var totalAmount = parseFloat(newAmount);
     var items = "<table border='1' cellpadding='4' cellspacing='0'>" +
         "<tr><td>Item</td><td>Item Cost</td></tr>";
     function addItem() {
@@ -18,7 +17,7 @@
         items = items.replace("</table>", "");
 
         // 2. Concatenate the value of Item Description into the table. Change item to the value of itemDescription
-        //items += "<tr><td>Item</td><td>$" + newAmount + "</td></tr>"
+        itemsDescription += "<tr><td>Item</td><td>$" + newAmount + "</td></tr>"
         items += "<tr><td>item</td><td>$" + parseFloat(newAmount).toFixed(2) + "</td></tr>"
         items += "</table>";
         
@@ -26,9 +25,9 @@
         document.getElementById('listOfItems').innerHTML = items;
 
         /// 3. Display totalAmount in element with id="totalAmountBeforeTax"
-
+        document.getElementById('totalAmountBeforeTax').innerHTML = totalAmount
         // 4. Calculate tax as 7% of total (totalAmount)
-        var taxAmount = 0;
+        var taxAmount = parseFloat(totalAmount * .07);
 
         // 5. Display tax in element with id="totalTax"
 
