@@ -4,30 +4,32 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif }
 </style>
 <script>
-    var totalAmount = parseFloat(newAmount);
-    var items = "<table border='1' cellpadding='4' cellspacing='0'>" +
+    var TotalAmount = 0;
+    var Items = "<Table Border='1' Cellpadding='4' Cellspacing='0'>" +
         "<tr><td>Item</td><td>Item Cost</td></tr>";
-    function addItem() {
-        var newAmount = document.getElementById('newAmount').value;
+    function addItem()
+    {
+        var NewAmount = document.getElementById('NewAmount').value;
 
         // 1. Add the value of newAmount to the running total totalAmount. Tip: Use parseFloat()
-
+        var TotalAmount = parseFloat(NewAmount);
     
-        var itemDescription = document.getElementById('newItem').value;
-        items = items.replace("</table>", "");
+        var ItemDescription = Document.getElementById('NewItem').value;
+        Items = Items.replace("</table>", "");
 
         // 2. Concatenate the value of Item Description into the table. Change item to the value of itemDescription
-        itemsDescription += "<tr><td>Item</td><td>$" + newAmount + "</td></tr>"
-        items += "<tr><td>item</td><td>$" + parseFloat(newAmount).toFixed(2) + "</td></tr>"
-        items += "</table>";
+        ItemsDescription += "<tr><td>Item</td><td>$" + NewAmount + "</td></tr>"
+        Items += "<tr><td>item</td><td>$" + parseFloat(NewAmount).toFixed(2) + "</td></tr>"
+        Items += "</table>";
         
         // Display items in element with id="listOfElements"
-        document.getElementById('listOfItems').innerHTML = items;
+        Document.getElementById('listOfItems').innerHTML = Items;
 
         /// 3. Display totalAmount in element with id="totalAmountBeforeTax"
-        document.getElementById('totalAmountBeforeTax').innerHTML = totalAmount
+        Document.getElementById('totalAmountBeforeTax').innerHTML = TotalAmount;
+        
         // 4. Calculate tax as 7% of total (totalAmount)
-        var taxAmount = parseFloat(totalAmount * .07);
+        var TaxAmount = parseFloat(TotalAmount * .07);
 
         // 5. Display tax in element with id="totalTax"
 
@@ -37,9 +39,9 @@
         //      Hint: use toFixed()
 
         
-        document.getElementById('newItem').value = "";
-        document.getElementById('newAmount').value = "";
-        document.getElementById('newItem').focus();
+        Document.getElementById('NewItem').value = "";
+        Document.getElementById('NewAmount').value = "";
+        Document.getElementById('NewItem').focus();
     }
 </script>
 </head>
@@ -47,20 +49,20 @@
 <h1>Grocery List</h1>
 <p>
 <h2>Add Item</h2> 
-Description: <br><input type="text" id="newItem"><br>
-Amount: <br><input type="text" id="newAmount"> 
-<input type="button" onclick="addItem()" value="Add Item">
+Description: <br><input type="text" id="NewItem"><br>
+Amount: <br><input type="text" id="NewAmount"> 
+<input type="button" onclick="AddItem()" value="Add Item">
 </p>
 <h2>Grocery Cart</h2>
 <span id="listOfItems">&nbsp;</span>
 <p>
 <h2>Total</h2>
-Total: $<span id="totalAmountBeforeTax"></span><br>
-Tax: $<span id="totalTax"></span><br>
-Total with Tax: $<span id="totalAfterTax"></span>
+Total: $<span id="TotalAmountBeforeTax"></span><br>
+Tax: $<span id="TotalTax"></span><br>
+Total with Tax: $<span id="TotalAfterTax"></span>
 </p>
 <script>
-    document.getElementById('newItem').focus();
+    Document.getElementById('NewItem').focus();
 </script>
 </body>
 </html>
