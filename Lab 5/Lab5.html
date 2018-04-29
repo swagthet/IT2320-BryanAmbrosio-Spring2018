@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+// 1. use eq to retrieve the paragraph with index 1. Highlight it by setting the CSS background-color to yellow.
+// 2(a). if the user clicks the submit button and the value of favoriteFood is empty, display an error message stating 
+// 2(b)."You must enter a favorite food" in the span following favoriteFood using the next() method.
+// 3. retrieve the first paragraph element and use the parent() method to modify the appearance of the h1 element.
+</script>
+</head>
+<body>
+
+<h1 class ="header">Lab 5</h1>
+
+<p>My name is Al.</p>
+<p>Al Dente.</p>
+<p>I live in the land of Pasta.</p>
+<p>My best friend is Cheese.</p>
+
+<form id="favoriteForm" name="favoriteForm">
+Enter your favorite food <input id="favoriteFood" name="favoriteFood" type="text" id="favorite"><br><span>&nbsp;</span>
+<br><br><input id="button" type="submit" value="Submit">
+</form>
+<script>
+$(document).ready(function(){
+    $("#button").click(function(){
+        var food = $("#favoriteFood").val();
+        
+        if(food == "")
+       $("p").last().next().after("(You must enter a favorite food)", " ");
+        else
+        $("p").last().next().after("My Favorite food is: " +food, "! ");
+        $("form").submit( function(){ return false;});
+    });
+});
+$( "p" ).eq( 1 ).css("background-color", "yellow");
+
+$("p:first").parent().children("h1").css("color", "red");
+</script>
+</body>
+</html>
