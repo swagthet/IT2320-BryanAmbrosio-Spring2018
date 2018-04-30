@@ -1,6 +1,14 @@
 <questions>
 <question id=”2”>
-<questiontext></questiontext>
+<questiontext>Describe the purpose of AJAX. What advantage does AJAX provide over a traditional HTML form submit.</questiontext>
 <answer id=”answer2”></answer>
+</question>
+<question id=”3”>
+<questiontext>Describe the role of JSON and XML with AJAX.</questiontext>
+<answer id=”answer3”></answer>
+</question>
+<question id=”4”>
+<questiontext>If you had to choose just one, which would you choose: XML or JSON? Why?</questiontext>
+<answer id=”answer4”></answer>
 </question>
 </questions>
