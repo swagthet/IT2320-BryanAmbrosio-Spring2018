@@ -1,1 +1,19 @@
-1
+<?xml version="1.0" encoding="UTF-8"?>
+<levels>
+<level1>
+<type>Seasonal</type>
+<cost>35.00</cost>
+</level1>
+<level2>
+<type>Individual</type>
+<cost>50.00</cost>
+</level2>
+<leve3>
+<type>Family</type>
+<cost>65.00</cost>
+</level3>
+<leve4>
+<type>Contributing</type>
+<cost>70.00</cost>
+</level4>
+</levels>
