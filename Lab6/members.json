@@ -1,4 +1,5 @@
-var members = {
+[
+{
     "Person 1" : {
         "name": "Cara Van",
         "address": "2 Highway",
@@ -19,3 +20,4 @@ var members = {
         "cost": "50.00"
     }
 }
+]
