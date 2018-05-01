@@ -1,55 +1,63 @@
+<!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8"/>
-        
-        <Access-Control-Allow-Origin:'http://cors.io/?u=https://github.com/swagthet/IT2320-BryanAmbrosio-Spring2018/blob/master/Lab6/members.json'/>
-<title>First Form</title>
+        <meta charset= "utf-8">
+        <script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <title>First Form</title>    
 </head>
-<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <body>
-<h1>Membership Levels</h1>
-<span id=”membershipLevels”></span>
-<h1>Current Members</h1>
-<button type="button" onclick="loadDoc()">Get my CD collection</button>
-<br><br>
-<span id=”members”></span>
+    <h1>Membership Levels</h1>
+    <div id="memlvl"></div>
+    <h1>Current Members</h1>
+    <p id="members"></p>
+    <h1>Questions</h1>
+    <div id="quest"></div>
+
 <script>
     $(document).ready(function(){
-        $.getJSON('http://cors.io/?u=https://github.com/swagthet/IT2320-BryanAmbrosio-Spring2018/blob/master/Lab6/members.json', function(data){
-            var members_data = '';
-            $.each(data, function(key,value){
-                members_data += '<tr>';
-                        members_data += '<td>'+value.name+'</td>';
-                        members_data += '<td>'+value.address+'</td>';
-                        members_data += '<td>'+value.city+'</td>';
-                        members_data += '<td>'+value.zip+'</td>';
-                members_data += '</tr>';
-            });
-            $('#members').append(members_data);
+        $.ajax({
+            type: "GET",
+            url: "memberships.xml",
+            dataType: "xml",
+            success: xmlParser
         });
     });
 
-    function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
+    function xmlParser(xml){
+        $(xml).find("levels").each(function(){
+            $("#memlvl").append('<div class="levels"><br/><div class="level">' + 
+            $(this).find("type").text()+ '<br/>'+ $(this).find("cost").text()+ '</div></div>');
+        });
+
     }
-  };
-  xhttp.open("GET", "http://cors.io/?u=https://github.com/swagthet/IT2320-BryanAmbrosio-Spring2018/blob/master/Lab6/memberships.xml", true);
-  xhttp.send();
-}
-function myFunction(xml) {
-  var i;
-  var xmlDoc = xml.responseXML;
-  var table="<tr><th>Type</th><th>Cost</th></tr>";
-  var x = xmlDoc.getElementsByTagName("memberships");
-  for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
-    x[i].getElementsByTagName("type")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("cost")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("membershipLevels").innerHTML = table;
-}
+
+    var MEM = new XMLHttpRequest();
+MEM.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       
+       document.getElementById("members").innerHTML = JSON.parse(MEM.responseText);
+    }
+};
+MEM.open("GET", "members.json", true);
+MEM.send();
+
+$(document).ready(function(){
+        $.ajax({
+            type: "GET",
+            url: "questions.xml",
+            dataType: "xml",
+            success: xmlParser
+        });
+    });
+
+    function xmlParser(xml){
+        $(xml).find("questions").each(function(){
+            $("#quest").append('<div class="questions"><br/><div class="question">' + 
+            $(this).find("questiontext").text()+ '<br/>'+ $(this).find("answer").text()+ '</div></div>');
+        });
+
+    }
+</script>
+
+</body>
+</html>       
