@@ -1,7 +1,8 @@
+{
+    "person" : 
+    [
+        {
 
-[
-    {
-    "Person 1" : {
         "name": "Cara Van",
         "address": "2 Highway",
         "city": "Cleveland",
@@ -9,9 +10,9 @@
         "phone": "999-999-9999",
         "level": "Contributing",
         "cost": "65.00"
-    },
+        },
 
-    "Person 2" : {
+        {
         "name": "Bill Bord",
         "address": "1 Side of Street",
         "city": "Parma",
@@ -19,6 +20,7 @@
         "phone": "123-123-1234",
         "level": "Individual",
         "cost": "50.00"
-    }
-    }
-]
+
+        }
+    ]
+}
