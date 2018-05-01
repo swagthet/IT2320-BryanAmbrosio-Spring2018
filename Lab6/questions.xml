@@ -1,14 +1,23 @@
+<class>
 <questions>
-<question id=”2”>
+<question>2</question>
 <questiontext>Describe the purpose of AJAX. What advantage does AJAX provide over a traditional HTML form submit.</questiontext>
-<answer id=”answer2”></answer>
-</question>
-<question id=”3”>
-<questiontext>Describe the role of JSON and XML with AJAX.</questiontext>
-<answer id=”answer3”></answer>
-</question>
-<question id=”4”>
-<questiontext>If you had to choose just one, which would you choose: XML or JSON? Why?</questiontext>
-<answer id=”answer4”></answer>
-</question>
+<answer>Ajax works as a way of bridging XML, js, or json to your html file. It is not
+it's own type of code rather a method of chaining these type of files to your webpage.</answer>
 </questions>
+
+<questions>
+<question>3</question>
+<questiontext>Describe the role of JSON and XML with AJAX.</questiontext>
+<answer>Json and xml work as way of storing information that will be needed so that it
+can be called to your html page with ajax. This helps you with not having to fill your html
+file with extra lines of unneeded code or information.</answer>
+</questions>
+
+<questions>
+<question>4</question>
+<questiontext>If you had to choose just one, which would you choose: XML or JSON? Why?</questiontext>
+<answer>Json is the better way to store data. xml has too much extra work needed to be
+written out and is harder to read. json has everything in clean easy to read layout. </answer>
+</questions>
+</class>
