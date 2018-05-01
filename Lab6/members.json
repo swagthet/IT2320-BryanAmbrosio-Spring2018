@@ -1,5 +1,5 @@
-[
 {
+[
     "Person 1" : {
         "name": "Cara Van",
         "address": "2 Highway",
@@ -19,5 +19,5 @@
         "level": "Individual",
         "cost": "50.00"
     }
-}
 ]
+}
